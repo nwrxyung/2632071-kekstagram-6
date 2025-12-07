@@ -28,11 +28,8 @@ const renderThumbnails = (picturesList, picturesContainer) => {
     renderFragment.appendChild(thumbnail);
   });
 
-  const oldThumbnails = picturesContainer.querySelectorAll('.picture');
-  oldThumbnails.forEach((thumb) => thumb.remove());
-  //Уход от innerhtml, что бы удалять старые миниатюры, а не всю разметку
+  picturesContainer.innerHTML = '';
   picturesContainer.appendChild(renderFragment);
 };
-
 
 export { renderThumbnails };
